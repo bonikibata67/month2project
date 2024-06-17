@@ -1,0 +1,7 @@
+CREATE PROCEDURE deleteHotel
+    @id NVARCHAR(50)
+AS
+BEGIN
+    DELETE FROM Hotel WHERE id = @id
+END
+GO

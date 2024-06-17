@@ -1,0 +1,7 @@
+CREATE TABLE Booking (
+    id NVARCHAR(50) PRIMARY KEY,
+    username NVARCHAR(255),
+    tour NVARCHAR(255),
+    hotel NVARCHAR(255),
+    bookingDate NVARCHAR(50)
+);

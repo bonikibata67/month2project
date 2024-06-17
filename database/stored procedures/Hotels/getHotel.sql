@@ -1,0 +1,8 @@
+CREATE PROCEDURE getHotel
+    @id NVARCHAR(50)
+AS
+BEGIN
+    SELECT * FROM Hotel WHERE id = @id
+END
+GO
+

@@ -1,0 +1,7 @@
+CREATE PROCEDURE getTour
+    @id NVARCHAR(50)
+AS
+BEGIN
+    SELECT * FROM Tour WHERE id = @id
+END
+GO
