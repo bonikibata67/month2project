@@ -47,7 +47,8 @@ export const loginUser=async (req:Request, res:Response)=>{
         if(isValid){
             const payload:Payload={
                 Sub: user[0].Id,
-                Name:user[0].Name
+                Name:user[0].Name,
+                role:user[0].Role
             }
             const token = jwt.sign(payload,process.env.SECRET as string, {expiresIn:'2h'} )
             return res.status(200).json({message:"Login success!!", token})  

@@ -14,3 +14,6 @@ BEGIN
     VALUES (@id, @image, @name, @destination, @description, @price)
 END
 GO
+
+INSERT INTO Tour (id, image, name, destination, description, price)
+VALUES ('123', 'https://cloudfront.safaribookings.com/lib/tanzania/tour/480x240/Kizimkazi_001.jpg', 'Lamu Island', 'Lamu', 'Lamu Island, which is also a UNESCO World Heritage site','$4675')

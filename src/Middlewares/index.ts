@@ -12,15 +12,14 @@ export interface ExtendedRequest1 extends Request{
 export function verifyToken(req:ExtendedRequest1,res:Response, next:NextFunction){
 
     try {
-        //reading token 
+      
         const token = req.headers['token'] as string
 
-        // is there a token?
+    
         if(!token){
             return res.status(401).json({message:'Forbidden!!'})
         }
-        //read
-        //verify
+       
         const decodedData= jwt.verify(token,process.env.SECRET as string) as Payload
         req.info=decodedData
 
@@ -28,6 +27,13 @@ export function verifyToken(req:ExtendedRequest1,res:Response, next:NextFunction
         return res.status(500).json(error)
     }
 
-    ///above-----( Request is Paused!!)
+   
     next()
+}
+
+export function isAdmin(req: ExtendedRequest1, res: Response, next: NextFunction) {
+    if (req.info?.role !== 'admin') {
+        return res.status(403).json({ message: 'Admin access only' });
+    }
+    next();
 }
